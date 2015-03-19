@@ -1,0 +1,82 @@
+body {
+    font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
+    padding: 3em;
+    margin: 0 auto;
+    width:700px;
+    height:800px;
+    background-color: #eee;
+}
+
+h1 {
+    font-weight: 300;
+    text-align: center;
+    background-color: white;
+    padding: 1em;
+
+
+}
+
+input{
+    font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
+    outline: none;
+    border: 1px solid #eee;
+    padding: 1em 1em;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 1em 1em;
+}
+
+button{
+    font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
+    outline: none;
+    border: 1px solid #eee;
+    padding: 1em 1em;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 1em 0em ;
+    width:90px;
+    float:right;
+}
+
+
+.panel {
+    padding: 1em;
+    background-color: #eee;
+    margin: 1em;
+    width:700px;
+}
+
+input{
+    width:540px;
+}
+button, input[type="submit"] {
+    border-radius: 0.3em;
+
+
+}
+button:hover, input[type="submit"]:hover {
+    background-color: #777;
+    color: white;
+    transition: all 150ms ease;
+    cursor: pointer;
+}
+
+#map-canvas{
+    height:500px;
+    width:700px;
+    padding:1em;
+    margin:1em;
+}
+
+.school-container{
+
+    padding:1em 0em;
+    border-bottom:  2px solid white;
+}
+
+span{
+    font-weight: 300;
+}
+
+.bar{
+    width:700px;
+    padding:1em 0em;
+}

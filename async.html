@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bower_components/async/lib/async.js"></script>
+    <script>
+        function rev(str, callback){
+            setTimeout(function() {
+                callback(null,str.split('').reverse().join(''));
+            },1000)
+        }
+
+        arr = ['string','number','boolean'];
+
+
+       var start = new Date();
+
+
+        async.map(['string','number','boolean'],rev,function(err,results) {
+            console.log('error'+ err);
+            console.log(results);
+            console.log((new Date())-start);
+        });
+
+
+
+         var fns =  arr.map(function(ele){
+             return rev.bind(null,ele);
+        });
+
+        async.series(fns,function(err,results) {
+            console.log(results);
+            console.log((new Date())-start);
+        })
+
+   </script>
+</head>
+<body>
+
+</body>
+</html>
