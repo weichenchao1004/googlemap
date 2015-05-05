@@ -21,11 +21,17 @@ document.addEventListener('DOMContentLoaded',function() {
 
             var  locationInfo  = input.value;
 
+
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/schools/' + '"' + locationInfo + '"');
+
+            xhr.open('GET', '/schools/' + '"'+ locationInfo + '"');
+          //  console.log('/schools/' + '"' + locationInfo + '"');
+
             xhr.setRequestHeader('accept', 'application/json');
             xhr.addEventListener('readystatechange', function () {
-                if( xhr.readyState === 4 && xhr.status === 201 ) {
+                if( xhr.readyState === 4 && xhr.status === 200 )
+                  {
+
                     var schools = JSON.parse(xhr.responseText);
                     console.log(schools);
 
@@ -34,11 +40,11 @@ document.addEventListener('DOMContentLoaded',function() {
                     addSingleUniToView(university_container, schools[0]);
                 }
             });
-            xhr.send();
 
+           xhr.send();
         })
     }
-})
+});
 
 function addSingleUniToView(university_container,school){
     var school_div = createElement('div', university_container, '', 'school-container');
@@ -74,11 +80,10 @@ function initialize(){
 
 function codeAddress(address,callback){
 
-
             geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
-                        //console.log(results[0].geometry.location);
+
                         callback(null,{
                             lon:results[0].geometry.location.D,
                             lat:results[0].geometry.location.k

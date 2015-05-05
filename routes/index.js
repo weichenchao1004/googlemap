@@ -10,7 +10,7 @@ mongoose.connect(config.MONGO, function (err) {
     else console.log('Successfully connected to mongodb ... ');
 });
 
-var SchoolModel = mongoose.model('weicollege', {
+var SchoolModel = mongoose.model('college', {
     Accreditation_Date_Type:String,
     Accreditation_Status:String,
     Accreditation_Type:String,
@@ -42,9 +42,10 @@ var SchoolModel = mongoose.model('weicollege', {
 
 router.get('/schools/:zip', function(req, res) {
     var zip = req.params.zip;
+    console.log(zip);
     SchoolModel.find({ 'Institution_Zip': zip},function (err, result) {
         if (err) res.status(500).json({message: 'Sorry! Something broke!'});
-        else res.status(201).json(result);
+        else res.status(200).json(result);
         console.log(result);
     });
 });
